@@ -30,7 +30,9 @@ public class Main {
                     System.out.println("=".repeat(30));
                     break;
                 case 2:
-                    System.out.println("Deposit");
+                    System.out.print("Deposit Amount: USD ");
+                    double depositAmount = input.nextDouble();
+                    accountBalance += depositAmount;
                     System.out.println("=".repeat(30));
                     break;
                 case 3:
