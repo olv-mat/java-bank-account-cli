@@ -11,11 +11,11 @@ public class Main {
         System.out.println("=".repeat(30));
         System.out.println("Account Owner: " + accountOwner);
         System.out.println("Account Type: " + accountType);
-        System.out.println("Balance: USD " + accountBalance);
-        System.out.println("=".repeat(30));
+        System.out.printf("Balance: USD %.2f%n", accountBalance);
 
         Scanner input = new Scanner(System.in);
         while (true) {
+            System.out.println("=".repeat(30));
             System.out.println("Menu");
             System.out.println("1 - Balance");
             System.out.println("2 - Deposit");
@@ -26,32 +26,29 @@ public class Main {
             int option = input.nextInt();
             switch (option) {
                 case 1:
-                    System.out.println("Balance: USD " + accountBalance);
-                    System.out.println("=".repeat(30));
+                    System.out.printf("Balance: USD %.2f%n", accountBalance);
                     break;
                 case 2:
                     System.out.print("Deposit Amount: USD ");
                     double depositAmount = input.nextDouble();
                     accountBalance += depositAmount;
-                    System.out.println("=".repeat(30));
+                    System.out.printf("Updated Balance: USD %.2f%n", accountBalance);
                     break;
                 case 3:
                     System.out.print("Withdraw Amount: USD ");
                     double withdrawAmount = input.nextDouble();
                     if (withdrawAmount > accountBalance) {
                         System.out.println("Insufficient Balance");
-                        System.out.println("=".repeat(30));
                         break;
                     }
                     accountBalance -= withdrawAmount;
-                    System.out.println("=".repeat(30));
+                    System.out.printf("Updated Balance: USD %.2f%n", accountBalance);
                     break;
                 case 4:
                     System.out.println("Leaving...");
                     return;
                 default:
                     System.out.println("Invalid Option");
-                    System.out.println("=".repeat(30));
                     break;
             }
         }
