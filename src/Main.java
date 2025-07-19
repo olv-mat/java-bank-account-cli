@@ -26,7 +26,7 @@ public class Main {
             int option = input.nextInt();
             switch (option) {
                 case 1:
-                    System.out.println("Balance");
+                    System.out.println("Balance: USD " + accountBalance);
                     System.out.println("=".repeat(30));
                     break;
                 case 2:
