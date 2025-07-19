@@ -36,7 +36,14 @@ public class Main {
                     System.out.println("=".repeat(30));
                     break;
                 case 3:
-                    System.out.println("Withdraw");
+                    System.out.print("Withdraw Amount: USD ");
+                    double withdrawAmount = input.nextDouble();
+                    if (withdrawAmount > accountBalance) {
+                        System.out.println("Insufficient Balance");
+                        System.out.println("=".repeat(30));
+                        break;
+                    }
+                    accountBalance -= withdrawAmount;
                     System.out.println("=".repeat(30));
                     break;
                 case 4:
@@ -44,6 +51,7 @@ public class Main {
                     return;
                 default:
                     System.out.println("Invalid Option");
+                    System.out.println("=".repeat(30));
                     break;
             }
         }
